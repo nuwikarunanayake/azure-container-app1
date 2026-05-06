@@ -7,5 +7,8 @@ WORKDIR /usr/share/nginx/html
 # Copy the HTML files to the container
 COPY ./www /usr/share/nginx/html
 
+# Expose port 80 (IMPORTANT for Azure)
+EXPOSE 80
+
 # Start Nginx web server
 CMD ["nginx", "-g", "daemon off;"]
